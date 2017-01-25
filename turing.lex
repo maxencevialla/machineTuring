@@ -50,9 +50,10 @@ void moveRight() {
 void lancer() {
 	
 	printf("Instruction read : %s\n", yytext);
+	//tranche(yytext, "f");
 	
 }
 
-/*char ** tranche(char *chaine, char car) {
-	
-}*/
+char ** tranche(char *chaine, char car) {
+	//return {"sdffgdsfez","sdfdsf"};
+}
