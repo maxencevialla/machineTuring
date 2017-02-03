@@ -381,10 +381,10 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[17] =
+static yyconst flex_int16_t yy_accept[16] =
     {   0,
         2,    2,    5,    2,    3,    2,    2,    2,    2,    2,
-        2,    2,    2,    2,    1,    0
+        2,    2,    2,    1,    0
     } ;
 
 static yyconst flex_int32_t yy_ec[256] =
@@ -398,11 +398,11 @@ static yyconst flex_int32_t yy_ec[256] =
         1,    6,    1,    1,    3,    3,    3,    3,    3,    3,
         3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
         3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
-        1,    1,    1,    1,    1,    1,    7,    3,    3,    3,
+        1,    1,    1,    1,    1,    1,    3,    3,    3,    3,
 
-        3,    3,    3,    7,    3,    3,    3,    7,    7,    7,
-        3,    7,    3,    3,    3,    3,    7,    3,    3,    3,
-        3,    3,    6,    1,    6,    1,    1,    1,    1,    1,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        3,    3,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -419,37 +419,35 @@ static yyconst flex_int32_t yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst flex_int32_t yy_meta[8] =
+static yyconst flex_int32_t yy_meta[7] =
     {   0,
-        1,    2,    1,    1,    1,    1,    1
+        1,    2,    1,    1,    1,    1
     } ;
 
-static yyconst flex_int16_t yy_base[19] =
+static yyconst flex_int16_t yy_base[18] =
     {   0,
-        9,    0,   10,    0,   27,    5,    0,    0,   10,    1,
-       12,    1,   17,    2,   27,   27,   24,    0
+       13,    0,   14,    0,   16,    9,    0,    9,    6,    1,
+        6,    3,    3,   16,   16,    7,    0
     } ;
 
-static yyconst flex_int16_t yy_def[19] =
+static yyconst flex_int16_t yy_def[18] =
     {   0,
-       17,   17,   16,   18,   16,   18,   18,    6,   18,   18,
-       18,   18,   18,   13,   16,    0,   16,   16
+       16,   16,   15,   17,   15,   17,   17,   17,   17,   17,
+       17,   17,   17,   15,    0,   15,   15
     } ;
 
-static yyconst flex_int16_t yy_nxt[35] =
+static yyconst flex_int16_t yy_nxt[23] =
     {   0,
-        7,    5,    6,   15,   13,   11,    6,    8,    9,   16,
-        5,    8,   10,   16,   16,   16,   10,   12,   12,   14,
-       16,   16,   16,   14,    4,    4,    3,   16,   16,   16,
-       16,   16,   16,   16
+        7,    5,    6,   11,   14,   13,   11,    4,    4,   12,
+       10,    9,    8,   15,    5,    3,   15,   15,   15,   15,
+       15,   15
     } ;
 
-static yyconst flex_int16_t yy_chk[35] =
+static yyconst flex_int16_t yy_chk[23] =
     {   0,
-       18,    2,    2,   14,   12,   10,    2,    6,    6,    3,
-        1,    6,    9,    0,    0,    0,    9,   11,   11,   13,
-        0,    0,    0,   13,   17,   17,   16,   16,   16,   16,
-       16,   16,   16,   16
+       17,    2,    2,   10,   13,   12,   10,   16,   16,   11,
+        9,    8,    6,    3,    1,   15,   15,   15,   15,   15,
+       15,   15
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -467,13 +465,25 @@ int yy_flex_debug = 0;
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
 #line 1 "turing.lex"
-#line 3 "turing.lex"
+/*
+ * Simulateur de machine de Turing
+ * Paramètres :
+ * 		- nom de fichier contenant les instructions sous la forme p,s:o,q
+ * (les états p et q n'auront qu'un seul caractère, l'alphabet reconnu est constitué
+ * de tous les caractères alphanumériques et du caractère espace)
+ * 		- état initial de la bande de la machine de Turing sous forme de chaîne de
+ * caractères
+ * 
+ * 
+ * 
+ */
+#line 18 "turing.lex"
 /* * * * * * * * * * * *
  * * * DEFINITIONS * * *
  * * * * * * * * * * * */
-#line 9 "turing.lex"
+#line 24 "turing.lex"
 int line_num = 1;
-#line 477 "turing.c"
+#line 487 "turing.c"
 
 #define INITIAL 0
 
@@ -663,7 +673,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 13 "turing.lex"
+#line 28 "turing.lex"
 
 
 
@@ -672,7 +682,7 @@ YY_DECL
  * * * * * * * * */
 
 
-#line 676 "turing.c"
+#line 686 "turing.c"
 
 	if ( !(yy_init) )
 		{
@@ -726,13 +736,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 17 )
+				if ( yy_current_state >= 16 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 27 );
+		while ( yy_base[yy_current_state] != 16 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -761,26 +771,26 @@ case 1:
 (yy_c_buf_p) = yy_cp -= 1;
 YY_DO_BEFORE_ACTION; /* set up yytext again */
 YY_RULE_SETUP
-#line 21 "turing.lex"
+#line 36 "turing.lex"
 { lancer(); }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 23 "turing.lex"
-{ printf("%d: error: %s \n", line_num, yytext); }
+#line 38 "turing.lex"
+{ printf("%d: error: %s \n", line_num, yytext);  }
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 24 "turing.lex"
+#line 39 "turing.lex"
 { line_num++; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 25 "turing.lex"
+#line 40 "turing.lex"
 ECHO;
 	YY_BREAK
-#line 784 "turing.c"
+#line 794 "turing.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1073,7 +1083,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 17 )
+			if ( yy_current_state >= 16 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1101,11 +1111,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 17 )
+		if ( yy_current_state >= 16 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 16);
+	yy_is_jam = (yy_current_state == 15);
 
 	return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1781,7 +1791,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 25 "turing.lex"
+#line 40 "turing.lex"
 
 
 
@@ -1789,33 +1799,104 @@ void yyfree (void * ptr )
  * * * USER CODE * * *
  * * * * * * * * * * *
  */
+#include "listeD.c"
+
+char currentState;
+Dlist *list;
+Node *currentNode;
+int isTurning;
+
 int main(int argc, char *argv[]) {
+	
+	//Initialisation de la bande et du statut courant
+	list = dlist_new();
+	currentNode = malloc(sizeof *currentNode); //Node représentant la position du curseur
+	setInitialBande(argv[2]);
+	currentNode = list->p_head;
+	currentState = 'S';
+	
+	dlist_display(list, currentNode);
+	
+	isTurning = 1; //Détermine si on a executé une instruction lors de la lecture du fichier
+	
+	//Gestion du fichier d'instructions
 	char filename[30];
     strcpy(filename, argv[1]);
-	yyin = fopen(filename, "r+");
-  yylex();
+    FILE *test = fopen(filename, "r+");
+    
+	yyin = test;
+	
+	//Tant qu'on execute une instruction parmi celles contenues dans le fichier, on recommence
+	while(isTurning) {
+		isTurning = 0;
+		fseek(test, 0, SEEK_SET); //reset le curseur dans le fichier
+		yylex();
+	}
+	
 }
 
-void moveLeft() {
+//Initialise la bande avec la chaine de caractères fournis par l'utilisateur
+void setInitialBande(char *bandeInit) {
+	int size = strlen(bandeInit);
+	printf("Initialise la bande avec %s de longueur %d\n", bandeInit, size);
+	int i;
 	
-	printf("Move left\n");
+	for(i = 0 ; i < size+1 ; i++) {
+		dlist_append(list, bandeInit[i]);
+	}
 	
+	dlist_append(list, ' '); //On rajoute un espace en fin de bande pour la cohérence
 }
 
+//Déplace la tête de L/E à droite de la bande
 void moveRight() {
+	if(currentNode->p_next == NULL) { //On créé la case à droite si elle n'existe pas
+		list = dlist_append(list, ' ');
+	}
 	
-	printf("Move right\n");
-	
+	currentNode = currentNode->p_next;	
 }
 
+//Idem vers la gauche
+void moveLeft() {
+	if(currentNode->p_prev == NULL) {
+		list = dlist_prepend(list, ' ');
+	}
+	
+	currentNode = currentNode->p_prev;	
+}
+
+//Analyse l'instruction lue par flex et la lance si besoin
 void lancer() {
 	
-	printf("Instruction read : %s\n", yytext);
-	//tranche(yytext, "f");
+	//Chaque information est sur une seule lettre, on peut donc facilement "split"
+	char initState = yytext[0];
+	char testInst = yytext[2];
+	char instruc = yytext[4];
+	char nextState = yytext[6];
 	
-}
-
-char ** tranche(char *chaine, char car) {
-	//return {"sdffgdsfez","sdfdsf"};
+	//Si on doit executer cette instruction
+	if(currentState == initState && currentNode->data == testInst) { 
+		printf("\n(Etat courant, donnée courante) = (%c, %c)\n", currentState, currentNode->data);
+		printf("Instruction valide trouvée : %s\n", yytext);
+		
+		isTurning = 1; //La machine a executé une instruction pendant cette boucle
+		//TODO idéalement, on recommence au début du fichier à ce moment là
+		
+		currentState = nextState;
+		
+		//Traitement particulier des déplacements
+		if(instruc == '>') {
+			moveRight();
+		}
+		else if(instruc == '<') {
+			moveLeft();
+		}
+		else { //Si ce n'est pas un déplacement, on a juste à remplacer le contenu de la case
+			currentNode->data = instruc;
+		}
+		dlist_display(list, currentNode);	
+	}
+	
 }
 
